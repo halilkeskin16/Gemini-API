@@ -11,14 +11,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3 # @v2'yi @v3 ile güncelledik
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false # Git kimlik bilgilerini yeniden eklemek için
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Inject API Key into script.js
         run: |
           echo "window.API_KEY = '${{ secrets.API_KEY }}';" >> ./public/script.js
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4 # @v3'ü @v4 ile güncelledik
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public # Yayınlanacak klasör
