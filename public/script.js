@@ -1,47 +1,51 @@
-const apiKey = config.apiKey;
+// API anahtarını window.API_KEY üzerinden alın
+const apiKey = window.API_KEY;
 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-        let currentLanguage = "tr";  // Başlangıç dili Türkçe olarak ayarlandı
 
-        const texts = {
-            tr: {
-                title: "Blockly ile Artık Daha Eğlenceli!",
-                outputTitle: "Çıktı",
-                explanationTitle: "Açıklama",
-                chatTitle: "Chat",
-                welcomeMessage: "Merhaba! Kodlama ve teknolojiyle ilgili sorularını buraya yazabilirsin!",
-                userInputPlaceholder: "Sorunu yaz...",
-                sendBtn: "Gönder",
-                runCodeBtn: "Kodu Çalıştır ve Açıkla",
-                toolboxCategories: {
-                    controls: "Kontroller",
-                    logic: "Mantık",
-                    math: "Matematik",
-                    text: "Metin",
-                    variables: "Değişkenler"
-                },
-                explainPrompt: (code) => `Çocuklar için basit bir dille açıklama yap. Bu kod ne yapıyor?: "${code}".`,
-                chatPrompt: (message) => `Çocuklar için teknoloji ve yazılım hakkında anlaşılır bir cevap ver. Soru: "${message}".`
-            },
-            en: {
-                title: "Coding with Blockly is More Fun!",
-                outputTitle: "Output",
-                explanationTitle: "Explanation",
-                chatTitle: "Chat",
-                welcomeMessage: "Hello! You can ask your questions about coding and technology here!",
-                userInputPlaceholder: "Type your question...",
-                sendBtn: "Send",
-                runCodeBtn: "Run Code and Explain",
-                toolboxCategories: {
-                    controls: "Controls",
-                    logic: "Logic",
-                    math: "Math",
-                    text: "Text",
-                    variables: "Variables"
-                },
-                explainPrompt: (code) => `Explain in a simple way for kids. What does this code do?: "${code}".`,
-                chatPrompt: (message) => `Provide a simple and understandable answer for kids about technology and coding. Question: "${message}".`
-            }
-        };
+let currentLanguage = "tr";  // Başlangıç dili Türkçe olarak ayarlandı
+
+const texts = {
+    tr: {
+        title: "Blockly ile Artık Daha Eğlenceli!",
+        outputTitle: "Çıktı",
+        explanationTitle: "Açıklama",
+        chatTitle: "Chat",
+        welcomeMessage: "Merhaba! Kodlama ve teknolojiyle ilgili sorularını buraya yazabilirsin!",
+        userInputPlaceholder: "Sorunu yaz...",
+        sendBtn: "Gönder",
+        runCodeBtn: "Kodu Çalıştır ve Açıkla",
+        toolboxCategories: {
+            controls: "Kontroller",
+            logic: "Mantık",
+            math: "Matematik",
+            text: "Metin",
+            variables: "Değişkenler"
+        },
+        explainPrompt: (code) => `Çocuklar için basit bir dille açıklama yap. Bu kod ne yapıyor?: "${code}".`,
+        chatPrompt: (message) => `Çocuklar için teknoloji ve yazılım hakkında anlaşılır bir cevap ver. Soru: "${message}".`
+    },
+    en: {
+        title: "Coding with Blockly is More Fun!",
+        outputTitle: "Output",
+        explanationTitle: "Explanation",
+        chatTitle: "Chat",
+        welcomeMessage: "Hello! You can ask your questions about coding and technology here!",
+        userInputPlaceholder: "Type your question...",
+        sendBtn: "Send",
+        runCodeBtn: "Run Code and Explain",
+        toolboxCategories: {
+            controls: "Controls",
+            logic: "Logic",
+            math: "Math",
+            text: "Text",
+            variables: "Variables"
+        },
+        explainPrompt: (code) => `Explain in a simple way for kids. What does this code do?: "${code}".`,
+        chatPrompt: (message) => `Provide a simple and understandable answer for kids about technology and coding. Question: "${message}".`
+    }
+};
+
+// Diğer mevcut fonksiyonlar ve kodlar burada devam eder
 
         function updateLanguage(lang) {
             currentLanguage = lang;
