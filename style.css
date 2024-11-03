@@ -1,0 +1,184 @@
+/* Sayfa Ortalaması */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #fffae6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+
+/* Navbar Stili */
+.navbar {
+    width: 100%;
+    background-color: #ff7043;
+    padding: 15px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dil Seçenekleri */
+.language-options {
+    display: flex;
+    gap: 10px;
+}
+
+.language-options span {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ffccbc;
+    color: #333;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+}
+
+.language-options span:hover {
+    background-color: #ffab91;
+}
+
+/* Ana Konteyner */
+#mainContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Blockly ve Çıktı Konteyneri */
+#blocklyDiv {
+    height: 500px;
+    width: 600px;
+    border: 2px solid #4fc3f7;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#outputContainer {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #ffccbc;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#outputContainer h2 {
+    color: #ff7043;
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    margin: 5px 0;
+}
+
+/* Çıktı ve Açıklama Alanları */
+#outputArea {
+    font-size: 1em;
+    padding: 10px;
+    background-color: #fff8e1;
+    border-radius: 10px;
+    border: 1px solid #ffcc80;
+    height: 30px;
+    overflow-y: hidden;
+}
+
+#explanationArea {
+    font-size: 1em;
+    padding: 10px;
+    background-color: #fff8e1;
+    border-radius: 10px;
+    border: 1px solid #ffcc80;
+    height: 300px;
+    overflow-y: auto;
+}
+
+/* Chat Kutusu */
+#chatContainer {
+    width: 300px;
+    border: 2px solid #4fc3f7;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 500px;
+}
+
+#chatBox {
+    max-height: 320px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    border: 1px solid #b2ebf2;
+}
+
+.message {
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'Comic Sans MS', sans-serif;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.user-message {
+    background-color: #ffccbc;
+    color: #333;
+    text-align: right;
+    align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
+}
+
+.bot-message {
+    background-color: #d1c4e9;
+    color: #333;
+    text-align: left;
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+}
+
+/* Giriş ve Butonlar */
+#userInput, #sendBtn, #runCodeBtn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#sendBtn, #runCodeBtn {
+    background: linear-gradient(45deg, #42a5f5, #42f57b);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#sendBtn:hover, #runCodeBtn:hover {
+    background: linear-gradient(45deg, #42f57b, #42a5f5);
+}

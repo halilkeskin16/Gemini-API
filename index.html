@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blok Kodalama ile Artık Daha Eğlenceli!</title>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar Başlık -->
+    <div class="navbar">
+        <div id="pageTitle">Blockly ile Artık Daha Eğlenceli!</div>
+        <div class="language-options">
+            <span id="lang-tr">Türkçe</span>
+            <span id="lang-en">English</span>
+        </div>
+    </div>
+
+    <div id="mainContainer">
+        <div id="blocklyDiv"></div>
+        
+        <div id="outputContainer">
+            <h2 id="outputTitle">Çıktı</h2>
+            <div id="outputArea"></div>
+            <h2 id="explanationTitle">Açıklama</h2>
+            <div id="explanationArea"></div>
+        </div>
+
+        <div id="chatContainer">
+            <h2 id="chatTitle">Chat</h2>
+            <div id="chatBox">
+                <div class="message user-message" id="welcomeMessage">Merhaba! Kodlama ve teknolojiyle ilgili sorularını buraya yazabilirsin!</div>
+            </div>
+            <input type="text" id="userInput" placeholder="Sorunu yaz..." />
+            <button id="sendBtn">Gönder</button>
+            <button id="runCodeBtn">Kodu Çalıştır ve Açıkla</button>
+        </div>
+    </div>
+    <script src=".gitignore/config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
